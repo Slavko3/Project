@@ -1,0 +1,16 @@
+<div class="con">
+	<div class="title">
+		Categories
+	</div>
+	<%@categories.each do |category|%>
+			<div class="categ">
+        		 <%= link_to category_path(category.id) do%>
+	        		<i class="itn"><%=category.name%></i>
+	        	<%end%>
+        		<i class="itcount">Count of items: <%=category.items.count%></i>
+        	</div>
+       	<%end%>
+</div>
+<br>
+<br>
+<br>

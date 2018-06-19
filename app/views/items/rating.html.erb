@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="con">
+        	<div class="title">
+        		Items rating
+        	</div>
+        	<%@items.each do |item|%>        	
+	        	<div class="item"> 
+		        	<%= link_to item_path(item.id) do%>
+		        		<i class="itn"><%=item.name[0..10]%></i>
+		        	<%end%>
+    		        <%= image_tag item.photos[0].url, width: 200, heigth: 200 %>
+	        		<i class="itc">Score: <%=item.score%></i>
+	        	</div>
+	       	<%end%>
+    	</div>
+    </body>
+</html>

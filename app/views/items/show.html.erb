@@ -1,0 +1,31 @@
+<div class="title">
+	<%=@item.name%>
+	<div class="vote">
+		<%=link_to positiv_vote_path(@item.id) do%>
+	            <div class="btn">
+	              +
+	            </div>
+		<%end%>
+		<%=link_to positiv_vote_path(@item.id) do%>
+	            <div class="btn">
+	              -
+	            </div>
+		<%end%>
+	</div>
+</div>
+<hr>
+Категорії:
+	<%@item.categories.each do |category|%>
+	<div class="btn">
+		<%=category.name%>
+    </div>
+	<%end%>
+<hr>
+<p>description:<%=@item.description%></p>
+<p>Prise: <%=@item.cost%></p>
+<p>Count: <%=@item.count%></p>
+<p>Rating: <%=@item.score%></p>
+<hr>
+<%@item.photos.each do |photo|%>
+<%=image_tag photo ,weight: 300, height: 300%>
+<%end%>

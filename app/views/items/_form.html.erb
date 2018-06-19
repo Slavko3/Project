@@ -1,0 +1,39 @@
+<hr>
+<div>
+Select category of product
+	<%@categories.each do |category|%>
+		 <div class="btn">
+			<%= check_box_tag 'category_ids[]' , category.id%>
+			<%= f.label category.name%>
+        </div>
+	<%end%>
+</div>
+<hr>
+<div class="form-group">
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control',autofocus: true %>
+</div>
+
+<div class="form-group">
+	<%= f.label :description %>
+	<br>
+	<%= f.text_area :description, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= f.label :cost %>
+	<%= f.text_field :cost, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= f.label :count %>
+	<%= f.text_field :count, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%=f.label :photos%>
+	<%= f.file_field :photos, multiple: true %>
+</div>
+
+
+<%= f.submit :commit %>

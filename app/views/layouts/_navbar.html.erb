@@ -1,0 +1,84 @@
+<link href="style.css" rel="stylesheet">
+<div class="header">
+  
+  <%= link_to root_path do%>
+    <div class="name">
+      AutoParts
+    </div>
+  <%end%>
+  <div class="names">
+      <%=link_to new_item_path do%>
+            <div class="btn">
+              Add a new item
+            </div>
+      <%end%>
+      <%=link_to items_rating_path do%>
+            <div class="btn">
+              Items rating
+            </div>
+      <%end%>
+      <%=link_to categories_path do%>
+            <div class="btn">
+              Categories
+            </div>
+      <%end%>
+  </div>
+
+  <% if current_user.nil? %>
+    <%= link_to  user_session_path do %> 
+      <div class="btn">
+        Sign in
+      </div>
+      <% end %>
+  <% else %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <div class="btn">
+          Log out
+        </div>
+      <%end%>
+      <div class="ava">
+        <%= image_tag current_user.avatar.url(:thumb), width: 30, heigth: 30 %>
+      </div>
+  <%end%>
+</div>
+
+  <!-- 
+   <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Головна" , root_path, class:"navbar-brand"%>
+
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%=link_to "Додати новий товар" , new_item_path,  class:"nav-link"%>
+        </li>
+        <br>
+        <li class="nav-item">
+          <%=link_to "Рейтинг товарів" , items_rating_path,  class:"nav-link"%>
+        </li>
+        <br>
+        <li class="nav-item">
+          <%=link_to "Категорії товарів" , categories_path,  class:"nav-link"%>
+        </li>
+        </ul>
+
+      </div>
+
+  <ul class="nav navbar-nav navbar-right">    
+    <% if current_user.nil? %>  
+      <li>
+        <%= link_to  user_session_path do %> 
+          <i class="glyphicon glyphicon-log-in"></i>Login
+        <% end %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <%= image_tag current_user.avatar.url(:thumb), width: 30, heigth: 30 %>
+          <i class="glyphicon glyphicon-log-out"></i>Logout
+        <% end %>
+      </li>
+    <%end%>
+  </ul>
+    </div>
+  </nav> -->

@@ -1,0 +1,9 @@
+<%=link_to item_path(item.id) do%>
+	<div>
+	  <%=item.name%>
+	</div>
+<%end%>
+<p><%= image_tag item.photos[0].url, width: 100, heigth: 100 %></p>
+<i class="itc"><%=item.count%></i>
+</div>
+<hr>

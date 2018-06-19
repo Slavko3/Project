@@ -1,0 +1,3 @@
+<%=form_for @item, url: item_path(@item.id), method: :patch, validate: true  do |f|%>
+<%=render 'form', f:f%>
+<%end%>
